@@ -18,7 +18,7 @@ Example :
      java -DUrl=http://localhost:9999/blazegraph/                     \
           -DAccept=text/tab-separated-values                          \
           -DNamespace=soere                                           \
-          -IncludeInferred=true                                       \
+          -DIncludeInferred=true                                      \
           -DQuery=\"SELECT ?S ?P ?O WHERE { ?S ?P ?O . } LIMIT 1000\" \
           -jar sparql-queryer.jar   
 
