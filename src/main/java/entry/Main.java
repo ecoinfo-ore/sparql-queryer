@@ -6,6 +6,7 @@ import com.inra.coby.blz.manager.Http;
 import static com.inra.coby.blz.manager.Utils.setDefault;
  import static com.inra.coby.blz.manager.Utils.getProperty;
  import static com.inra.coby.blz.manager.Utils.removeLastSlash;
+import static com.inra.coby.blz.manager.Utils.removeWrappedSimpleOrDoubleQuotes;
 
  public class Main {
             
@@ -43,6 +44,8 @@ import static com.inra.coby.blz.manager.Utils.setDefault;
         }
         
         String sparqlQuery  = setDefault( getProperty("Query"), "SELECT ?S ?P ?O WHERE { ?S ?P ?O . }" ) ;
+        sparqlQuery         = removeWrappedSimpleOrDoubleQuotes(sparqlQuery)                             ;
+        
         String accept       = setDefault( getProperty("Accept"), "text/tab-separated-values" )           ;
         
         String _url         = setDefault( getProperty("Url"), "http://localhost:9999/blazegraph/" )      ;

@@ -30,5 +30,17 @@ public class Utils {
         }
         return param.trim() ;
     }
+    
+     public static String removeWrappedSimpleOrDoubleQuotes( String str ) {
+        if( str == null ) return str        ; 
+        if( ( str.trim().startsWith("\"")  &&
+              str.trim().endsWith("\"")  ) || 
+            ( str.trim().startsWith("'")   &&
+            str.trim().endsWith("'") ) )    {
+            return str.substring( 1, str.length() - 1 )   ;
+        }
+        
+        return str ;
+    }
 
 }
