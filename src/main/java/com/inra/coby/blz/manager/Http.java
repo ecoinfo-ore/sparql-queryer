@@ -52,7 +52,7 @@ public class Http {
                 out.flush()                                ;
             }
             
-            System.out.println(" Sparql Query Execution Finiched " )            ;
+            System.out.println(" Sparql Query Execution Finished " )            ;
             
       } catch (HttpException e) {
           System.err.println("Fatal protocol violation: " + e.getMessage())     ;
