@@ -50,10 +50,13 @@ public class Http {
             while( ( line = bufferedReader.readLine()) != null ) { 
                 out.write( line + System.lineSeparator() ) ;
                 out.flush()                                ;
-            }  
+            }
+            
+            System.out.println(" Sparql Query Execution Finiched " )            ;
+            
       } catch (HttpException e) {
-          System.err.println("Fatal protocol violation: " + e.getMessage());
-          e.printStackTrace() ;
+          System.err.println("Fatal protocol violation: " + e.getMessage())     ;
+          e.printStackTrace()                                                   ;
       } finally {
           method.releaseConnection() ;
       }  
